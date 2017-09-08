@@ -4,7 +4,7 @@
   "description": "the first section for mongodb tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec \"mocha -R min\""
   },
   "author": "",
   "license": "ISC",
