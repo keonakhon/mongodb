@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+//before test sample 1
 /*before((done) => {
   mongoose.connect('mongodb://localhost/user_test');
   mongoose.connection
@@ -11,6 +12,7 @@ mongoose.Promise = global.Promise;
     });
 });*/
 
+//before test sample 2 (almost same result as above)
 before((done)=>{
   mongoose.connect('mongodb://localhost/users_test', { useMongoClient: true })
     .then((db)=>done())
