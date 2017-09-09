@@ -10,8 +10,13 @@ describe('Deleteing a user', () => {
       .then(() => done());
   });
 
-  it('model instance remove', () => { //joe = new User
-
+  it('model instance remove', (done) => { //joe = new User
+    joe.remove()
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        assert(user === null);
+        done();
+      });
   });
 
   it('class method remove', () => { // const User
