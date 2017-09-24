@@ -14,5 +14,17 @@ describe('Associations', () => {
     joe.blogPosts.push(blogPost);
     blogPost.comments.push(comment);
     comment.user = joe;
+
+    Promise.all([joe.save(), blogPost.save(), comment.save()])
+      .then(() => done());
+  });
+  /* it.only() ----- used for run the only one it function,
+  the other it function won't be run */
+  it.only('save a relation between a user and a blogpost', (done) => {
+    User.findOne({ name: 'Joe' })
+      .then((user) => {
+        console.log(user);
+        done();
+      });
   });
 });
