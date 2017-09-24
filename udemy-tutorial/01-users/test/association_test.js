@@ -8,10 +8,10 @@ describe('Associations', () => {
 
   beforeEach((done) => {
     joe = new User({ name: 'Joe' });
-    blogPost = new blogPost({ title: 'JS is Great', content: 'Yep it really is' });
+    blogPost = new BlogPost({ title: 'JS is Great', content: 'Yep it really is' });
     comment = new Comment({ content: 'Congratz on great post' });
 
-    joe.blogPosts.pust(blogPost);
+    joe.blogPosts.push(blogPost);
     blogPost.comments.push(comment);
     comment.user = joe;
   });
